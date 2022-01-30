@@ -18,13 +18,6 @@ def encrypt(plain_text, shift_amount):
     shifted_string += letter_shift
   print(f"The encoded text is {shifted_string}")
 
-encrypt(plain_text = text, shift_amount = shift)
-
-    
-    
-
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
-
+encrypt(plain_text = text, shift_amount = shift)
