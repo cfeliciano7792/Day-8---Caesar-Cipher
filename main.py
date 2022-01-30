@@ -4,7 +4,7 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-
+#TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar(). 
 
 def encrypt(plain_text, shift_amount):
   #creates empty string
@@ -32,7 +32,7 @@ def decrypt(cipher_text, shift_amount):
   
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
+#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
 
 if direction == "encode":
   encrypt(plain_text = text, shift_amount = shift)
