@@ -18,11 +18,11 @@ def encrypt(plain_text, shift_amount):
     shifted_string += letter_shift
   print(f"The encoded text is {shifted_string}")
 
-def decrypt(plain_text, shift_amount):
+def decrypt(cipher_text, shift_amount):
    #creates empty string
   shifted_string = ""
 
-  for letter in plain_text:
+  for letter in cipher_text:
   #creates an index of item in the list alphabet. Ex a = 0 b = 1 etc
     letter_position = alphabet.index(letter)
   #shifts the letter thats outputted based on user input
@@ -37,4 +37,4 @@ def decrypt(plain_text, shift_amount):
 if direction == "encode":
   encrypt(plain_text = text, shift_amount = shift)
 if direction == "decode":
-  decrypt(plain_text = text, shift_amount = shift)
+  decrypt(cipher_text = text, shift_amount = shift)
