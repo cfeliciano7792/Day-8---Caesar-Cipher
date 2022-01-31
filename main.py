@@ -18,14 +18,13 @@ def caesar(text, shift, direction):
     print(f"The encoded text is {shifted_string}")
 
   elif direction == "decode":
-    #creates empty string
+    
     shifted_string = ""
-
     for letter in text:
-    #creates an index of item in the list alphabet. Ex a = 0 b = 1 etc
       letter_position = alphabet.index(letter)
-    #shifts the letter thats outputted based on user input
+
       letter_shift = alphabet[letter_position - shift]
+      
       shifted_string += letter_shift
     print(f"The decoded text is {shifted_string}")
     
