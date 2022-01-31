@@ -5,36 +5,32 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 #TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar(). 
+def caesar(text, shift, direction):
+  if direction == "encode":
+    shifted_string = ""
 
-def encrypt(plain_text, shift_amount):
-  #creates empty string
-  shifted_string = ""
+    for letter in text:
+      #creates an index of item in the list alphabet. Ex a = 0 b = 1 etc
+      letter_position = alphabet.index(letter)
+      #shifts the letter thats outputted based on user input
+      letter_shift = alphabet[letter_position + shift]
+      shifted_string += letter_shift
+    print(f"The encoded text is {shifted_string}")
 
-  for letter in plain_text:
+  elif direction == "decode":
+    #creates empty string
+    shifted_string = ""
+
+    for letter in text:
     #creates an index of item in the list alphabet. Ex a = 0 b = 1 etc
-    letter_position = alphabet.index(letter)
+      letter_position = alphabet.index(letter)
     #shifts the letter thats outputted based on user input
-    letter_shift = alphabet[letter_position + shift]
-    shifted_string += letter_shift
-  print(f"The encoded text is {shifted_string}")
+      letter_shift = alphabet[letter_position - shift]
+      shifted_string += letter_shift
+    print(f"The decoded text is {shifted_string}")
+    
 
-def decrypt(cipher_text, shift_amount):
-   #creates empty string
-  shifted_string = ""
-
-  for letter in cipher_text:
-  #creates an index of item in the list alphabet. Ex a = 0 b = 1 etc
-    letter_position = alphabet.index(letter)
-  #shifts the letter thats outputted based on user input
-    letter_shift = alphabet[letter_position - shift]
-    shifted_string += letter_shift
-  print(f"The decoded text is {shifted_string}")
+caesar(text, shift, direction)
+      ##HINT: How do you get the index of an item in a list:
+      #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
   
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
-
-if direction == "encode":
-  encrypt(plain_text = text, shift_amount = shift)
-elif direction == "decode":
-  decrypt(cipher_text = text, shift_amount = shift)
